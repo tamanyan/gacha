@@ -30,6 +30,7 @@ Here is a simple example to pick up the item from 3 items which are Ruby, Python
 ```ruby
 require 'gacha'
 
+box = Gacha::Box.new
 items = [
   Gacha::Item.new("Ruby", 55),
   Gacha::Item.new("Python", 20),
@@ -50,6 +51,7 @@ if you want to use consumable item, you should write below code.
 ```ruby
 require 'gacha'
 
+box = Gacha::Box.new
 items = [
   Gacha::Item.new("Ruby", 55),
   Gacha::Item.new("Python", 20),
@@ -68,6 +70,9 @@ p box.draw # nil
 
 ### Remove Item from Box
 ```ruby
+require 'gacha'
+
+box = Gacha::Box.new
 item = Gacha::Item.new("test1", 30)
 box.remove(item)
 p box.empty? # true
