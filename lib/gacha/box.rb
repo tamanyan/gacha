@@ -26,9 +26,13 @@ module Gacha
 
     def remove(item)
       @items.delete_if do |x|
-        x == item
+        if x == item
+          @total_rate -= item.rate
+          true
+        else
+          false
+        end
       end
-      @total_rate -= item.rate
     end
 
     def clear
